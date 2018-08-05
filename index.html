@@ -5,17 +5,18 @@
     <title>Project Website</title>
     <style>
       body {
-        background-color: orange;
+        background-color: rgb(51, 51, 51);
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h1>Header 1: Main Title</h1>
-    <h2>Header 2: ~</h2>
-    <h3>Header 3: ~</h3>
-    <h4>Header 4: ~</h4>
-    <h5>Header 5: ~</h5>
-    <h6>Header 6: ~</h6>
+    <h1 style="background-color: rgb(77, 77, 77);">Header 1: Main Title</h1>
+    <h2 style="background-color: rgb(102, 102, 102);">Header 2: ~</h2>
+    <h3 style="background-color: rgb(128, 128, 128);">Header 3: ~</h3>
+    <h4 style="background-color: rgb(153, 153, 153);"> Header 4: ~</h4>
+    <h5 style="background-color: rgb(179, 179, 179);">Header 5: ~</h5>
+    <h6 style="background-color: rgb(204, 204, 204);">Header 6: ~</h6>
   </body>
 </html>
 <!-- HTML/CSS TAGS AND INFO
@@ -61,7 +62,11 @@
   <style>                 STYLE
     p {...}                 ELEMENT SELECTOR
     #id {...}               ID SELECTOR
-    .class {                CLASS SELECTOR
+    .class {...}            CLASS SELECTOR
+    p.class {...}           COMBINED CLASS AND ELEMENT SELECTOR
+    p .class {...}          DESCENDANT SELECTOR
+    h1, h2 {...}            GROUPED SELECTORS
+    a:hover {               DYNAMIC PSEUDO-CLASS SELECTOR
       color: red;             COLOR (NAME)
       color: #ff0000;         COLOR (HEX VALUE)
       color: rgb(255, 0, 0);  COLOR (RGB VALUE)
@@ -108,4 +113,5 @@
       clear ...;              CLEAR [left, right, both]
     }
   </style>
+validator.w3.org/check
 -->
