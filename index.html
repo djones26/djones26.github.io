@@ -7,19 +7,31 @@
       body {
         background-color: rgb(51, 51, 51);
         color: white;
+        padding: 10px;
+      }
+      p {
+        background-color: white;
+        color: black;
       }
     </style>
   </head>
   <body>
     <h1 style="background-color: rgb(77, 77, 77);">Header 1: Main Title</h1>
+    <p>
+      Testing<br>
+      out<br>
+      some<br>
+      text.<br>
+    </p>
     <h2 style="background-color: rgb(102, 102, 102);">Header 2: ~</h2>
     <h3 style="background-color: rgb(128, 128, 128);">Header 3: ~</h3>
     <h4 style="background-color: rgb(153, 153, 153);"> Header 4: ~</h4>
     <h5 style="background-color: rgb(179, 179, 179);">Header 5: ~</h5>
     <h6 style="background-color: rgb(204, 204, 204);">Header 6: ~</h6>
+    <script></script>
   </body>
 </html>
-<!-- HTML/CSS TAGS AND INFO
+<!-- HTML/CSS/JS TAGS AND INFO
   <h1>...</h1>            HEADERS (FROM LARGEST TO SMALLEST)
   <h2>...</h2>
   <h3>...</h3>
@@ -43,6 +55,8 @@
     alt="alternate-text"    ALTERNATE TEXT
     width="num"             WIDTH
     height="num>            HEIGHT
+  <audio                  AUDIO
+    scr="url-of-audio">     SOURCE
   <a                      LINK
     href="url"              HYPER-REFERENCE (ADDRESS OR INTERNAL LINK)
     target="_blank">        TARGET (OPENS IN NEW TAB)
@@ -59,6 +73,22 @@
       </tr>
     </tbody>
   </table>
+  <div>
+    <label>What's your name?
+    <input id="name" type="text">
+    </label>
+    <br>
+    <label>What language do you speak?
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="plt">Pig-latin</option>
+    </select>
+    </label>
+    <br>
+    <button id="button" type="button">Greet me, please!</button>
+    <div id="message"></div>
+  </div>
   <style>                 STYLE
     p {...}                 ELEMENT SELECTOR
     #id {...}               ID SELECTOR
@@ -66,6 +96,7 @@
     p.class {...}           COMBINED CLASS AND ELEMENT SELECTOR
     p .class {...}          DESCENDANT SELECTOR
     h1, h2 {...}            GROUPED SELECTORS
+    a[href*="text"] {...}   ATTRIBUTE SELECTOR
     a:hover {               DYNAMIC PSEUDO-CLASS SELECTOR
       color: red;             COLOR (NAME)
       color: #ff0000;         COLOR (HEX VALUE)
@@ -113,5 +144,70 @@
       clear ...;              CLEAR [left, right, both]
     }
   </style>
+  <script>                JAVASCRIPT
+    // Replaces content with what you specifiy.
+    document.body.innerHTML = "";
+    
+    // Stores elements in variables by using methods
+    // to retrieve certain ones.
+    var idNameEl = document.getElementById("id-name"); // Element
+    var tagEls = document.getElementsByTagName("span"); // HTMLCollection
+    var classEls = document.getElementsByClassName("class-name"); // HTMLCollection
+    var selectorEl = document.querySelector("#any-single-selector"); // Element
+    var selectorEls = document.querySelectorAll("p .class"); // NodeList
+    
+    // Sets/Replaces element content.
+    idNameEl.innerHTML = "";
+
+    // Sets/Replaces text of element.
+    idNameEl.textContent = "";
+
+    // Loops through array to replace content within each element.
+    for ( var i = 0; i < classEls.length; i++ ) {
+      classEls[i].innerHTML = "";
+    }
+    
+    // Sets/Replaces attribute of element.
+    var imageEls = document.getElementsByTagName("img");
+    for ( var i = 0; i < imageEls.length; i++ ) {
+      imageEls[i].src = "https://www.url.com/new-image";
+      /* ...or use the setAttribute() method.
+      imageEls[0].setAttribute("scr", https://www.url.com/new-image");
+      */
+    }
+    
+    // Removes attribute from element.
+    imageEls[imageEls.length-1].removeAttribute("alt");
+    
+    // Creates a new HTML element.
+    var strongEl = document.createElement("strong");
+    
+    // Create a text node.
+    var strongText = document.createTextNode("text");
+
+    // Appends element at the end of NodeList.
+    strongEl.appendChild(strongText);
+    selectorEl.appendChild(strongEl);
+    
+    // Prints to developer tools console.
+    console.log(tagEls);
+    
+    // Adds an event to a button that calls a function when it is clicked.
+    var clickerButton = document.getElementbyId("button");
+    
+    var onButtonClick = function() {
+      clickerButton.textContent = "New text";
+    }
+    
+    clickerButton.addEventListener("click", onButtonClick);
+    
+    /*
+      mouse events (MouseEvent): mousedown, mouseup, click, dblclick, mousemove, mouseover, mousewheel, mouseout, contextmenu
+      touch events (TouchEvent): touchstart, touchmove, touchend, touchcancel
+      keyboard events (KeyboardEvent): keydown, keypress, keyup
+      form events: focus, blur, change, submit
+      window events: scroll, resize, hashchange, load, unload
+    */
+  </script>
 validator.w3.org/check
 -->
